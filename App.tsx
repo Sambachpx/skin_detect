@@ -47,6 +47,17 @@ const App = () => {
               return <Settings size={20} color="#000000" />;
             }
           },
+          tabBarShowLabel: false,
+          tabBarActiveTintColor: 'white',
+          tabBarStyle: {
+            position: 'absolute',
+            bottom: 25,
+            left: 20,
+            right: 20,
+            elevation: 0,
+            borderRadius: 15,
+            height: 70,
+          },
         })}>
         <bottomTab.Screen name="Home" component={HomeScreen} />
         <bottomTab.Screen name="Settings" component={SettingsScreen} />
