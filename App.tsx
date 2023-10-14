@@ -14,7 +14,7 @@ function HomeScreen() {
         justifyContent: 'center',
         alignItems: 'center',
       }}>
-      <Text>Home</Text>
+      <Text>Welcome to SkinDetect</Text>
     </View>
   );
 }
@@ -37,26 +37,29 @@ const App = () => {
     <NavigationContainer>
       <bottomTab.Navigator
         screenOptions={({route}) => ({
-          tabBarIcon: () => {
+          tabBarIcon: ({focused}) => {
             let iconName;
             if (route.name === 'Home') {
               iconName = 'Home';
-              return <Home size={20} color="#000000" />;
+              return <Home size={20} color={focused ? '#FFFFFF' : 'gray'} />;
             } else if (route.name === 'Settings') {
               iconName = 'Settings';
-              return <Settings size={20} color="#000000" />;
+              return (
+                <Settings size={20} color={focused ? '#FFFFFF' : 'gray'} />
+              );
             }
           },
           tabBarShowLabel: false,
           tabBarActiveTintColor: 'white',
           tabBarStyle: {
+            backgroundColor: '#000000',
             position: 'absolute',
             bottom: 25,
             left: 20,
             right: 20,
             elevation: 0,
             borderRadius: 15,
-            height: 70,
+            height: 60,
           },
         })}>
         <bottomTab.Screen name="Home" component={HomeScreen} />
