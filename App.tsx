@@ -41,10 +41,10 @@ const App = () => {
             let iconName;
             if (route.name === 'Home') {
               iconName = 'Home';
-              return <Home size={20} />;
+              return <Home size={20} color="#000000" />;
             } else if (route.name === 'Settings') {
               iconName = 'Settings';
-              return <Settings size={20} />;
+              return <Settings size={20} color="#000000" />;
             }
           },
         })}>
