@@ -2,7 +2,7 @@ import React from 'react';
 import {StyleProp, StyleSheet, Text, View, ViewStyle} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
-import {Home, Settings} from 'lucide-react-native';
+import {Home, Settings, ScanEye} from 'lucide-react-native';
 
 const bottomTab = createBottomTabNavigator();
 
@@ -16,6 +16,14 @@ function HomeScreen() {
   return (
     <View style={StyleContainer}>
       <Text>Welcome to SkinDetect</Text>
+    </View>
+  );
+}
+
+function ScanScreen() {
+  return (
+    <View style={StyleContainer}>
+      <Text>Scan</Text>
     </View>
   );
 }
@@ -38,7 +46,11 @@ export default function App() {
             if (route.name === 'Home') {
               iconName = 'Home';
               return <Home size={20} color={focused ? '#FFFFFF' : 'gray'} />;
-            } else if (route.name === 'Settings') {
+            } else if (route.name === 'Scan') {
+              iconName = 'ScanEye';
+              return <ScanEye size={20} color={focused ? '#FFFFFF' : 'gray'} />;
+            } else route.name === 'Settings';
+            {
               iconName = 'Settings';
               return (
                 <Settings size={20} color={focused ? '#FFFFFF' : 'gray'} />
@@ -59,6 +71,7 @@ export default function App() {
           },
         })}>
         <bottomTab.Screen name="Home" component={HomeScreen} />
+        <bottomTab.Screen name="Scan" component={ScanScreen} />
         <bottomTab.Screen name="Settings" component={SettingsScreen} />
       </bottomTab.Navigator>
     </NavigationContainer>
