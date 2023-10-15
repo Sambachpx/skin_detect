@@ -45,15 +45,15 @@ export default function App() {
             let iconName;
             if (route.name === 'Home') {
               iconName = 'Home';
-              return <Home size={20} color={focused ? '#FFFFFF' : 'gray'} />;
+              return <Home size={25} color={focused ? '#FFFFFF' : 'gray'} />;
             } else if (route.name === 'Scan') {
               iconName = 'ScanEye';
-              return <ScanEye size={20} color={focused ? '#FFFFFF' : 'gray'} />;
+              return <ScanEye size={25} color={focused ? '#FFFFFF' : 'gray'} />;
             } else route.name === 'Settings';
             {
               iconName = 'Settings';
               return (
-                <Settings size={20} color={focused ? '#FFFFFF' : 'gray'} />
+                <Settings size={25} color={focused ? '#FFFFFF' : 'gray'} />
               );
             }
           },
