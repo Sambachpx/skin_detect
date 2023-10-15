@@ -1,19 +1,20 @@
 import React from 'react';
-import {Text, View} from 'react-native';
+import {StyleProp, StyleSheet, Text, View, ViewStyle} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home, Settings} from 'lucide-react-native';
 
 const bottomTab = createBottomTabNavigator();
 
+const StyleContainer: StyleProp<ViewStyle> = {
+  flex: 1,
+  justifyContent: 'center',
+  alignItems: 'center',
+};
+
 function HomeScreen() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
+    <View style={StyleContainer}>
       <Text>Welcome to SkinDetect</Text>
     </View>
   );
@@ -21,18 +22,13 @@ function HomeScreen() {
 
 function SettingsScreen() {
   return (
-    <View
-      style={{
-        flex: 1,
-        justifyContent: 'center',
-        alignItems: 'center',
-      }}>
+    <View style={StyleContainer}>
       <Text>Settings</Text>
     </View>
   );
 }
 
-const App = () => {
+export default function App() {
   return (
     <NavigationContainer>
       <bottomTab.Navigator
@@ -67,5 +63,4 @@ const App = () => {
       </bottomTab.Navigator>
     </NavigationContainer>
   );
-};
-export default App;
+}
