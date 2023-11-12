@@ -1,5 +1,5 @@
 import React from 'react';
-import {StyleProp, StyleSheet, Text, View, ViewStyle} from 'react-native';
+import {StyleProp, Text, View, ViewStyle} from 'react-native';
 import {NavigationContainer} from '@react-navigation/native';
 import {createBottomTabNavigator} from '@react-navigation/bottom-tabs';
 import {Home, Settings, ScanEye} from 'lucide-react-native';
